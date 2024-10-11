@@ -1,4 +1,4 @@
-Introduction: (see "ORIS Writeup" above for full details)
+# Writeup Introduction:
 
 Many natural phenomena display properties or behaviours more than the mere aggregation of their parts. Humans, for instance, are capable of language, cognition and intricate social behaviours, none of which are properties of individual cells. Similarly, each cell’s functionality arises from the interactions between molecules, even though none possess the cell’s capabilities independently. This pattern, where macroscopic properties arise from interactions between microscopic components, termed ’emergence’, is a hallmark of complex systems. Emergence creates layers of abstraction within a system, where each behaves according to its own physical laws.
 Formal theories of emergence have already been introduced using information theory, such as in [5]. The contribution of this paper is a novel method of identifying emergence using machine learning. By approximating the dynamics of a complex system at different spatiotemporal scales, I confirm numerically that these layers of abstraction exist, and that the dynamics of each can be learned by a data-driven approach.
