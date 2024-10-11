@@ -1,6 +1,6 @@
 # Original Research in Science Emergence Project:
 
-Self-started summer project conducted under the supervision of a lecturer at Imperail College.  I was invited to present the project at my school (reached finals) and Imperial's Centre for Complexity Science.
+Self-started summer project conducted under the supervision of a lecturer at Imperial College.  I was invited to present the project at my school (reached finals) and Imperial's Centre for Complexity Science.
 
 Introduction to the writeup:  (see above for full document)
 Many natural phenomena display properties or behaviours more than the mere aggregation of their parts. Humans, for instance, are capable of language, cognition and intricate social behaviours, none of which are properties of individual cells. Similarly, each cell’s functionality arises from the interactions between molecules, even though none possess the cell’s capabilities independently. This pattern, where macroscopic properties arise from interactions between microscopic components, termed ’emergence’, is a hallmark of complex systems. Emergence creates layers of abstraction within a system, where each behaves according to its own physical laws.
