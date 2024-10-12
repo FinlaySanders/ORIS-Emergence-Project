@@ -17,11 +17,13 @@ vortex_node_model = VortexNodeModel()
 vortex_node_model.load_state_dict(torch.load('Models/VortexModel.pt'))
 vortex_model = MetaLayer(node_model=vortex_node_model)
 
-fig, axs = plt.subplots(2, 2)
+fig, axs = plt.subplots(1, 4, figsize=(12, 3))
+for ax in axs[0:-1]:
+    ax.set_aspect('equal')
 
 size = 20
 real_xy = XY_model(size)
-for _ in range(10):
+for _ in range(15):
     real_xy.numerical_integration(1)
 
 model_xy = XY_model(size, spin_model=spin_model, 
@@ -31,16 +33,16 @@ model_xy = XY_model(size, spin_model=spin_model,
 vortex_poses, avortex_poses = real_xy.find_vortices()
 vortex_visualiser = Vortex_Visualiser(size, vortex_poses, avortex_poses, vortex_model)
 
-real_xy.plot_quiver(axs[0,0], title="Real Spins")
-model_xy.plot_quiver(axs[0,1], title="Predicted Spins")
-vortex_visualiser.plot_scatter(axs[1,0], title="Predicted Vortices")
+real_xy.plot_quiver(axs[0], title="Real Spins and Vortices")
+model_xy.plot_quiver(axs[1], title="Predicted Spins")
+vortex_visualiser.plot_scatter(axs[2], title="Predicted Vortices")
 
 # error plotting
 start_spins = deepcopy(real_xy.spin_grid)
-axs[1,1].set_xlabel("Time")
-axs[1,1].set_ylabel("Mean Spin Error")
-axs[1,1].set_title("Error Plot")
-axs[1,1].legend()
+axs[3].set_xlabel("Time")
+axs[3].set_ylabel("Mean Spin Error")
+axs[3].set_title("Error Plot")
+axs[3].legend()
 
 gnn_errors = []
 identity_errors = []
@@ -75,8 +77,8 @@ def update_figures(frame):
     gnn_errors.append(mean_phase_difference(model_xy.spin_grid, real_xy.spin_grid))
 
     x = torch.arange(len(gnn_errors))
-    axs[1,1].plot(x, gnn_errors, color="Blue")
-    axs[1,1].plot(x, identity_errors, color ="Green")
+    axs[3].plot(x, gnn_errors, color="Blue")
+    axs[3].plot(x, identity_errors, color ="Green")
 
 def save_anim(anim, filename):
     #matplotlib.rcParams['animation.ffmpeg_path'] = "C:\\Users\\2175\\Downloads\\ffmpeg"
@@ -86,6 +88,7 @@ def save_anim(anim, filename):
 anim = animation.FuncAnimation(fig, update_figures, interval=100, frames=150, repeat=False)
 #save_anim(anim, "Videos/XY16.mp4")
 
+plt.tight_layout()
 plt.show()
 
 
