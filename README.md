@@ -1,6 +1,6 @@
 # Original Research in Science Emergence Project:
 
-Self-started summer project conducted under the supervision of a lecturer at Imperial College.  I was invited to present the project at my school (reached finals) and Imperial's Centre for Complexity Science.
+Self-started summer project conducted under the supervision of a lecturer at Imperial College.  I was invited to present the project as a finalist at a school competition and Imperial's Centre for Complexity Science.
 
 https://github.com/user-attachments/assets/6b79108d-1c2f-41d4-b7ba-fd3c05a54d4a
 
